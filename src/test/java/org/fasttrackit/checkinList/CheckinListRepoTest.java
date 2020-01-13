@@ -1,7 +1,7 @@
 package org.fasttrackit.checkinList;
 
 import org.fasttrackit.checkinList.model.CheckinList;
-import org.fasttrackit.checkinList.model.Passport;
+import org.fasttrackit.checkinList.model.GymMember;
 import org.fasttrackit.checkinList.repo.CheckinListRepository;
 import org.fasttrackit.checkinList.service.CheckinListService;
 import org.junit.jupiter.api.Test;
@@ -29,6 +29,7 @@ public class CheckinListRepoTest {
 
     @Autowired
     private CheckinListService service;
+    private String gymMemberNumber;
 
     @Test
     public void testSave() {
@@ -72,16 +73,16 @@ public class CheckinListRepoTest {
 
 
 
-    private CheckinList getCheckinList(String checkinListName, String firtsname, String lastName, String passportNumber) {
+    private CheckinList getCheckinList(String checkinListName, String firtsname, String lastName, String gymMemberNumber) {
         CheckinList checkinList = new CheckinList();
         checkinList.setName(checkinListName);
-        List<Passport> passports = new ArrayList<>();
-        Passport passport = new Passport();
-        passport.setFirstName(firtsname);
-        passport.setLastName(lastName);
-        passport.setPassportnumber(passportNumber);
-        passports.add(passport);
-        checkinList.setPassports(passports);
+        List<GymMember> gymMembers = new ArrayList<>();
+        GymMember gymMember = new GymMember();
+        gymMember.setFirstName(firtsname);
+        gymMember.setLastName(lastName);
+        gymMember.setGymMembernumber(gymMemberNumber);
+        gymMembers.add(gymMember);
+        checkinList.setGymMembers(gymMembers);
         return checkinList;
     }
 

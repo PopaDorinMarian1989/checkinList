@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class CheckinList {
+public class CheckinList<GymMember> {
     @Id
     @GeneratedValue
     private Long id;
@@ -15,7 +15,7 @@ public class CheckinList {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "agenda_id")
-    private List<Passport> passports = new ArrayList<>();
+    private List<GymMember> gymMembers = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -33,12 +33,12 @@ public class CheckinList {
         this.name = name;
     }
 
-    public List<Passport> getPassports() {
-        return passports;
+    public List<GymMember> getGymMembers() {
+        return gymMembers;
     }
 
-    public void setPassports(List<Passport> passports) {
-        this.passports = passports;
+    public void setGymMembers(List<GymMember> gymMembers) {
+        this.gymMembers = gymMembers;
     }
 
     @Override
@@ -46,7 +46,6 @@ public class CheckinList {
         final StringBuilder sb = new StringBuilder("CheckinList{");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
-        // sb.append(", passports=").append(passports);
         sb.append('}');
         return sb.toString();
     }

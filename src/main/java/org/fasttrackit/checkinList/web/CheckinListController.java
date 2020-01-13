@@ -9,19 +9,36 @@ import java.util.List;
 
 @RestController
 public class CheckinListController {
+
+    private final CheckinListService checkinListService;
+    private final CheckinListService service;
+
     @Autowired
-    private CheckinListService service;
-
-    @RequestMapping(path = "/check-in-list/{id}", method = RequestMethod.GET)
-    @ResponseBody
-    public CheckinListDTO getCheckinListById(@PathVariable long id) {
-        return service.getCheckinList(id);
+    public CheckinListController(CheckinListService checkinListService, CheckinListService service) {
+        this.checkinListService = checkinListService;
+        this.service = service;
     }
-
-    @RequestMapping(path = "/check-in-list", method = RequestMethod.GET)
-    @ResponseBody
-    public List<CheckinListDTO> getChekinLists() {
-        return service.getallCheckinLists();
-    }
-
+@PutMapping
+public CheckinListDTO getCheckinListById(@PathVariable long id) {
+    return service.getCheckinList(id);
 }
+
+
+@GetMapping
+public List<CheckinListDTO> getChekinLists() {
+      return service.getallCheckinLists();
+      }
+}
+    //@RequestMapping(path = "/check-in-list/{id}", method = RequestMethod.GET)
+    //@ResponseBody
+    //public CheckinListDTO getCheckinListById(@PathVariable long id) {
+       // return service.getCheckinList(id);
+    //}
+
+  //  @RequestMapping(path = "/check-in-list", method = RequestMethod.GET)
+   // @ResponseBody
+ //   public List<CheckinListDTO> getChekinLists() {
+     //   return service.getallCheckinLists();
+  //  }
+
+//}

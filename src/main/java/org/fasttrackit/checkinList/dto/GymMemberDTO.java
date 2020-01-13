@@ -1,10 +1,10 @@
 package org.fasttrackit.checkinList.dto;
 
-public class PassportDTO {
+public class GymMemberDTO {
     private long id;
     private String firstName;
     private String lastName;
-    private String passportNumber;
+    private String gymMemberNumber;
 
     public String getFirstName() {
         return firstName;
@@ -22,12 +22,12 @@ public class PassportDTO {
         this.lastName = lastName;
     }
 
-    public String getPassportNumber() {
-        return passportNumber;
+    public String getGymMemberNumber() {
+        return gymMemberNumber;
     }
 
-    public void setPassportNumber(String passportNumber) {
-        this.passportNumber = passportNumber;
+    public void setGymMemberNumber(String gymMemberNumber) {
+        this.gymMemberNumber = gymMemberNumber;
     }
 
     public long getId() {
@@ -36,5 +36,9 @@ public class PassportDTO {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public void setgymMemberNumber(String gymMembernumber) {
+
     }
 }

@@ -1,18 +1,20 @@
 package org.fasttrackit.checkinList.model;
 
 
+import org.fasttrackit.checkinList.dto.GymMemberDTO;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Passport {
+public class GymMember {
     @Id
     @GeneratedValue
     private long id;
     private String firstName;
     private String lastName;
-    private String passportnumber;
+    private String gymMembernumber;
 
     public String getFirstName() {
         return firstName;
@@ -30,12 +32,12 @@ public class Passport {
         this.lastName = lastName;
     }
 
-    public String getPassportnumber() {
-        return passportnumber;
+    public String getGymMembernumber() {
+        return gymMembernumber;
     }
 
-    public void setPassportnumber(String passportnumber) {
-        this.passportnumber = passportnumber;
+    public void setGymMembernumber(String gymMembernumber) {
+        this.gymMembernumber = gymMembernumber;
     }
 
     public long getId() {
@@ -44,5 +46,9 @@ public class Passport {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public void update(GymMemberDTO request) {
+
     }
 }
