@@ -14,7 +14,7 @@ public interface CheckinListRepository extends
     List<CheckinList> findByNameContaining(String name);
 
 
-    CheckinList findOne(long checkinListId);
+    CheckinList findById(long checkinListId);
 
-    List<CheckinList> findCheckinListWhereNameLike(String agenda);
+
 }

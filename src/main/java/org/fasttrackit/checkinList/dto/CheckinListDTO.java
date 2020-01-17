@@ -36,11 +36,10 @@ public class CheckinListDTO {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("CheckinListDTO{");
-        sb.append("id=").append(id);
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", gymMembers=").append(gymMembers);
-        sb.append('}');
-        return sb.toString();
+        String sb = "CheckinListDTO{" + "id=" + id +
+                ", name='" + name + '\'' +
+                ", gymMembers=" + gymMembers +
+                '}';
+        return sb;
     }
 }

@@ -47,7 +47,7 @@ public class ConvertorUtils {
 
         @Transactional
         public void update(GymMemberDTO gymMemberDTO) {
-            GymMember one = gymMemberRepository.findOne(gymMemberDTO.getId());
+            GymMember one = gymMemberRepository.findById(gymMemberDTO.getId());
             if (one == null) {
                 throw new IllegalArgumentException("Invalid id");
 
@@ -67,13 +67,13 @@ public class ConvertorUtils {
             one.setLastName(gymMemberDTO.getLastName());
             one.setFirstName(gymMemberDTO.getFirstName());
 
-            CheckinList checkinList = checkinListRepository.findOne(checkinListId);
+            CheckinList checkinList = checkinListRepository.findById(checkinListId);
             checkinList.getGymMembers().add(one);
             checkinListRepository.save(checkinList);
         }
 
         public void delete (long gymMemberId){
-            gymMemberRepository.delete(gymMemberId);
+            gymMemberRepository.deleteById(gymMemberId);
 
         }
     }

@@ -5,7 +5,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface GymMemberRepository extends
         PagingAndSortingRepository<GymMember, Long> {
-    void delete(long passportId);
+    void deleteById(long gymMemberId);
 
-    GymMember findOne(long id);
+    GymMember findById(long id);
 }

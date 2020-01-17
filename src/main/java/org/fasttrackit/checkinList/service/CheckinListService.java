@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -19,9 +18,7 @@ public class CheckinListService {
     @Transactional
     public List<CheckinListDTO> getallCheckinLists() {
         List<CheckinListDTO> result = new ArrayList<>();
-        Iterator<CheckinList> iterator = checkinListRepository.findAll().iterator();
-        while (iterator.hasNext()) {
-            CheckinList next = iterator.next();
+        for (CheckinList next : checkinListRepository.findAll()) {
             result.add(ConvertorUtils.convertToDto(next));
         }
         return result;
@@ -32,7 +29,7 @@ public class CheckinListService {
 
     @Transactional
     public CheckinListDTO getCheckinList(long id) {
-        CheckinList one = checkinListRepository.findOne(id);
+        CheckinList one = checkinListRepository.findById(id);
         if (one == null) {
             throw new IllegalArgumentException("Invalid id");
         }

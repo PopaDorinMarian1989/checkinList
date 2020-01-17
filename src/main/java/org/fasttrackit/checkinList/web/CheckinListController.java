@@ -10,12 +10,10 @@ import java.util.List;
 @RestController
 public class CheckinListController {
 
-    private final CheckinListService checkinListService;
     private final CheckinListService service;
 
     @Autowired
     public CheckinListController(CheckinListService checkinListService, CheckinListService service) {
-        this.checkinListService = checkinListService;
         this.service = service;
     }
 @PutMapping

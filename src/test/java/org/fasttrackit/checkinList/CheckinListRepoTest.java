@@ -34,20 +34,15 @@ public class CheckinListRepoTest {
     @Test
     public void testSave() {
 
-        CheckinList checkinList = getCheckinList("checkinList0","firtsname", "ln","0000");
+        CheckinList checkinList = getCheckinList("checkinList0", "firtsname", "ln", "0000");
         repository.save(checkinList);
 
 
-        CheckinList checkinList2 = getCheckinList("checkinList1","Ala", "bala","11111");
+        CheckinList checkinList2 = getCheckinList("checkinList1", "Ala", "bala", "11111");
         repository.save(checkinList2);
 
 
-
-
     }
-
-
-
 
 
     @Test
@@ -60,17 +55,16 @@ public class CheckinListRepoTest {
         System.out.println(checkinList1List.get(0));
 
 
-        List<CheckinList> checkinListLikeList = repository.findCheckinListWhereNameLike("agenda");
+        List<CheckinList> checkinListLikeList = repository.findByNameContaining("agenda");
         System.out.println(checkinListLikeList.size());
 
         System.out.println("-----------------------REZULTAT TEST LIKE");
 
-        for(CheckinList checkinList : checkinListLikeList) {
+        for (CheckinList checkinList : checkinListLikeList) {
             System.out.println(checkinList);
         }
 
     }
-
 
 
     private CheckinList getCheckinList(String checkinListName, String firtsname, String lastName, String gymMemberNumber) {
@@ -86,7 +80,7 @@ public class CheckinListRepoTest {
         return checkinList;
     }
 
-    class SpringApplicationContextLoader implements ContextLoader {
+    static class SpringApplicationContextLoader implements ContextLoader {
         @Override
         public String[] processLocations(Class<?> aClass, String... strings) {
             return new String[0];
