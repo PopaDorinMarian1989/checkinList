@@ -16,27 +16,28 @@ public class CheckinListController {
     public CheckinListController(CheckinListService checkinListService, CheckinListService service) {
         this.service = service;
     }
-@PutMapping
-public CheckinListDTO getCheckinListById(@PathVariable long id) {
-    return service.getCheckinList(id);
+
+    @PutMapping
+    public CheckinListDTO getCheckinListById(@PathVariable long id) {
+        return service.getCheckinList(id);
+    }
+
+
+    @GetMapping
+    public List<CheckinListDTO> getChekinLists() {
+        return service.getallCheckinLists();
+    }
 }
+//@RequestMapping(path = "/check-in-list/{id}", method = RequestMethod.GET)
+//@ResponseBody
+//public CheckinListDTO getCheckinListById(@PathVariable long id) {
+// return service.getCheckinList(id);
+//}
 
-
-@GetMapping
-public List<CheckinListDTO> getChekinLists() {
-      return service.getallCheckinLists();
-      }
-}
-    //@RequestMapping(path = "/check-in-list/{id}", method = RequestMethod.GET)
-    //@ResponseBody
-    //public CheckinListDTO getCheckinListById(@PathVariable long id) {
-       // return service.getCheckinList(id);
-    //}
-
-  //  @RequestMapping(path = "/check-in-list", method = RequestMethod.GET)
-   // @ResponseBody
- //   public List<CheckinListDTO> getChekinLists() {
-     //   return service.getallCheckinLists();
-  //  }
+//  @RequestMapping(path = "/check-in-list", method = RequestMethod.GET)
+// @ResponseBody
+//   public List<CheckinListDTO> getChekinLists() {
+//   return service.getallCheckinLists();
+//  }
 
 //}

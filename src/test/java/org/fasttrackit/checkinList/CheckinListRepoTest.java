@@ -4,14 +4,10 @@ import org.fasttrackit.checkinList.model.CheckinList;
 import org.fasttrackit.checkinList.model.GymMember;
 import org.fasttrackit.checkinList.repo.CheckinListRepository;
 import org.fasttrackit.checkinList.service.CheckinListService;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.ApplicationContext;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.ContextLoader;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
@@ -19,9 +15,9 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ContextConfiguration(classes = CheckinListRepoTest.CheckinlistApplication.class,
-        loader = CheckinListRepoTest.SpringApplicationContextLoader.class,
-        initializers = ConfigFileApplicationContextInitializer.class)
+//@ContextConfiguration(classes = CheckinListRepoTest.CheckinlistApplication.class,
+      //  loader = CheckinListRepoTest.SpringApplicationContextLoader.class,
+     //   initializers = ConfigFileApplicationContextInitializer.class)
 
 public class CheckinListRepoTest {
     @Autowired
@@ -29,16 +25,16 @@ public class CheckinListRepoTest {
 
     @Autowired
     private CheckinListService service;
-    private String gymMemberNumber;
+
 
     @Test
     public void testSave() {
 
-        CheckinList checkinList = getCheckinList("checkinList0", "firtsname", "ln", "0000");
+        CheckinList checkinList = getCheckinList("checkinList1", "firtsname", "ln", "0");
         repository.save(checkinList);
 
 
-        CheckinList checkinList2 = getCheckinList("checkinList1", "Ala", "bala", "11111");
+        CheckinList checkinList2 = getCheckinList("checkinList2", "Popa", "Dorin", "1");
         repository.save(checkinList2);
 
 
@@ -80,18 +76,26 @@ public class CheckinListRepoTest {
         return checkinList;
     }
 
-    static class SpringApplicationContextLoader implements ContextLoader {
-        @Override
-        public String[] processLocations(Class<?> aClass, String... strings) {
-            return new String[0];
-        }
-
-        @Override
-        public ApplicationContext loadContext(String... strings) throws Exception {
-            return null;
-        }
+    public CheckinListService getService() {
+        return service;
     }
 
-    class CheckinlistApplication {
+    public void setService(CheckinListService service) {
+        this.service = service;
     }
-}
+
+    //  static class SpringApplicationContextLoader implements ContextLoader {
+     //   @Override
+      //  public String[] processLocations(Class<?> aClass, String... strings) {
+       //     return new String[0];
+       // }
+
+       // @Override
+      //  public ApplicationContext loadContext(String... strings) throws Exception {
+        //    return null;
+      //  }
+  //  }
+
+   // class CheckinlistApplication {
+    }
+
