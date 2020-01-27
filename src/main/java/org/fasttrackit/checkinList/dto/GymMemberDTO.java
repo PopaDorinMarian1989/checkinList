@@ -1,10 +1,10 @@
 package org.fasttrackit.checkinList.dto;
 
 public class GymMemberDTO {
-    private long id;
     private String firstName;
     private String lastName;
     private String gymMemberNumber;
+    private boolean isChecked;
 
     public String getFirstName() {
         return firstName;
@@ -30,15 +30,21 @@ public class GymMemberDTO {
         this.gymMemberNumber = gymMemberNumber;
     }
 
-    public long getId() {
-        return id;
+    public boolean isChecked() {
+        return isChecked;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setChecked(boolean checked) {
+        isChecked = checked;
     }
 
-    public void setgymMemberNumber(String gymMembernumber) {
-
+    @Override
+    public String toString() {
+        return "GymMemberDTO{" +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", gymMemberNumber='" + gymMemberNumber + '\'' +
+                ", isChecked=" + isChecked +
+                '}';
     }
 }

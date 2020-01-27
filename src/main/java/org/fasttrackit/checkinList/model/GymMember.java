@@ -15,6 +15,7 @@ public class GymMember {
     private String firstName;
     private String lastName;
     private String gymMembernumber;
+    private boolean isChecked;
 
     public String getFirstName() {
         return firstName;
@@ -48,7 +49,23 @@ public class GymMember {
         this.id = id;
     }
 
-    public void update(GymMemberDTO request) {
+    public boolean isChecked() {
+        return isChecked;
+    }
 
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+    }
+
+    @Override
+    public String toString() {
+        return "GymMember{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", gymMembernumber='" + gymMembernumber + '\'' +
+                ", isChecked=" + isChecked +
+                '}';
     }
 }
+

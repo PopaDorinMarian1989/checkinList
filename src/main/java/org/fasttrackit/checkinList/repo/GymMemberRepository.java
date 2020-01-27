@@ -1,11 +1,8 @@
 package org.fasttrackit.checkinList.repo;
 
 import org.fasttrackit.checkinList.model.GymMember;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface GymMemberRepository extends
-        PagingAndSortingRepository<GymMember, Long> {
-    void deleteById(long gymMemberId);
+public interface GymMemberRepository extends JpaRepository<GymMember, Long> {
 
-    GymMember findById(long id);
 }
