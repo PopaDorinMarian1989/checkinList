@@ -14,7 +14,7 @@ public class GymMember {
     private long id;
     private String firstName;
     private String lastName;
-    private String gymMembernumber;
+    private long gymMemberNumber;
     private boolean isChecked;
 
     public String getFirstName() {
@@ -33,12 +33,12 @@ public class GymMember {
         this.lastName = lastName;
     }
 
-    public String getGymMembernumber() {
-        return gymMembernumber;
+    public long getGymMemberNumber() {
+        return gymMemberNumber;
     }
 
-    public void setGymMembernumber(String gymMembernumber) {
-        this.gymMembernumber = gymMembernumber;
+    public void setGymMemberNumber(long gymMemberNumber) {
+        this.gymMemberNumber = gymMemberNumber;
     }
 
     public long getId() {
@@ -63,9 +63,8 @@ public class GymMember {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", gymMembernumber='" + gymMembernumber + '\'' +
+                ", gymMemberNumber=" + gymMemberNumber +
                 ", isChecked=" + isChecked +
                 '}';
     }
 }
-

@@ -1,10 +1,12 @@
 package org.fasttrackit.checkinList.dto;
 
+import javax.persistence.GeneratedValue;
+
 public class GymMemberDTO {
     private String firstName;
     private String lastName;
-    private String gymMemberNumber;
     private boolean isChecked;
+    private Long gymMemberNumber;
 
     public String getFirstName() {
         return firstName;
@@ -22,14 +24,6 @@ public class GymMemberDTO {
         this.lastName = lastName;
     }
 
-    public String getGymMemberNumber() {
-        return gymMemberNumber;
-    }
-
-    public void setGymMemberNumber(String gymMemberNumber) {
-        this.gymMemberNumber = gymMemberNumber;
-    }
-
     public boolean isChecked() {
         return isChecked;
     }
@@ -38,13 +32,21 @@ public class GymMemberDTO {
         isChecked = checked;
     }
 
+    public Long getGymMemberNumber() {
+        return gymMemberNumber;
+    }
+
+    public void setGymMemberNumber(Long gymMemberNumber) {
+        this.gymMemberNumber = gymMemberNumber;
+    }
+
     @Override
     public String toString() {
         return "GymMemberDTO{" +
-                ", firstName='" + firstName + '\'' +
+                "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", gymMemberNumber='" + gymMemberNumber + '\'' +
                 ", isChecked=" + isChecked +
+                ", gymMemberNumber=" + gymMemberNumber +
                 '}';
     }
 }

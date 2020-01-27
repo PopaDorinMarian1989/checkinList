@@ -30,7 +30,7 @@ public class GymMemberController {
         return new ResponseEntity<>(gymMember, HttpStatus.OK);
     }
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<GymMember>> getGymMember() {
         List<GymMember> gymMember = gymMemberService.getGymMember();
         return new ResponseEntity<>(gymMember, HttpStatus.OK);

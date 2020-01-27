@@ -26,7 +26,7 @@ public class GymMemberService {
     public GymMember create(GymMemberDTO gymMemberDTO) {
 
         GymMember one = new GymMember();
-        one.setGymMembernumber(gymMemberDTO.getGymMemberNumber());
+        one.setGymMemberNumber(gymMemberDTO.getGymMemberNumber());
         one.setLastName(gymMemberDTO.getLastName());
         one.setFirstName(gymMemberDTO.getFirstName());
         one.setChecked(false);
@@ -44,7 +44,7 @@ public class GymMemberService {
         List<GymMember> gymMembers = new ArrayList<>();
         while (gymMembersIterator.hasNext()) {
             GymMember gymMember = gymMembersIterator.next();
-            gymMember.setGymMembernumber(gymMember.getGymMembernumber());
+            gymMember.setGymMemberNumber(gymMember.getGymMemberNumber());
             gymMember.setFirstName(gymMember.getFirstName());
             gymMember.setLastName(gymMember.getLastName());
             gymMember.setChecked(gymMember.isChecked());
